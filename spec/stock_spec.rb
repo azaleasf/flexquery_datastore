@@ -9,4 +9,8 @@ describe DataStore::Stock do
   it 'belongs to a variant' do
     expect(first.variant).to be_a_kind_of(DataStore::Variant)
   end
+
+  it 'belongs to a store' do
+    expect(first.store).to be_a_kind_of(DataStore::Store)
+  end
 end

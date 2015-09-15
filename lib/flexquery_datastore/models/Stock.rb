@@ -6,5 +6,6 @@ module DataStore
     property :storeno, Integer, field: "storeno", key: true
 
     belongs_to :variant, child_key: [:itemsid]
+    belongs_to :store, child_key: [:storeno]
   end
 end
