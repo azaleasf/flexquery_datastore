@@ -9,4 +9,9 @@ describe DataStore::Variant do
   it 'should belong to a product' do
     expect(first.product).to be_a_kind_of(DataStore::Product)
   end
+
+  it 'should have many stocks' do
+    expect(first.stocks.length).to be >= 1
+    expect(first.stocks.first).to be_a_kind_of(DataStore::Stock)
+  end
 end
