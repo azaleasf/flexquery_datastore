@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-This gem is for the DataStore product offered by [FlexQuery](flexquery.com). It provides an ORM mapping on top of the DataStore database.
+The main use of this gem is to help gain access to data in a RetailPro 8 or RetailPro 9 system so you can build your own tools on top of RetailPro, or migrate all of your existing RetailPro data to a new inventory management system.
+
+This gem does not interface directly with RetailPro, instead it communicates with the DataStore product offered by [FlexQuery](flexquery.com). It provides an ORM mapping on top of the DataStore database.
 
 [DataMapper](http://datamapper.org/) was used as the ORM library. You can use [DataMapper query methods](http://datamapper.org/docs/find.html) on all objects created by this gem.
 
