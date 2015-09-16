@@ -6,6 +6,8 @@ module DataStore
 
     has n, :variants, child_key: [:vendorcode]
 
+    property :name, String, field: "company"
+
     def products
       products = self.variants.uniq { |variant| variant.desc1 }
       product_ids = products.map { |product| product.desc1 }

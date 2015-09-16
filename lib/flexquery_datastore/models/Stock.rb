@@ -7,5 +7,10 @@ module DataStore
 
     belongs_to :variant, child_key: [:itemsid]
     belongs_to :store, child_key: [:storeno]
+
+    property :onhand,   Integer, field: "onhand"
+    property :onorder,  Integer, field: "onorder"
+    property :received, Integer, field: "received"
+    property :sold,     Integer, field: "sold"
   end
 end
