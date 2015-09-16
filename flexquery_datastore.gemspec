@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["eshkurkin@gmail.com"]
 
   spec.summary       = %q{A Ruby Gem to interface with a FlexQuery DataStore instance.}
-  spec.description   = %q{A Ruby Gem to interface with a FlexQuery DataStore instance.}
+  spec.description   = %q{This gem is for the DataStore product offered by FlexQuery (flexquery.com).
+    It provides an ORM layer on top of the DataStore database.}
   spec.homepage      = "https://github.com/azaleasf/flexquery_datastore"
   spec.license       = "MIT"
 
