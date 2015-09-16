@@ -5,6 +5,11 @@ module DataStore
     property :vendorcode, String, field: "vendorcode", key: true
 
     has n, :variants, child_key: [:vendorcode]
-    has n, :products, child_key: [:vendorcode] 
+
+    def products
+      products = self.variants.uniq { |variant| variant.desc1 }
+      product_ids = products.map { |product| product.desc1 }
+      DataStore::Product.all(desc1: product_ids)
+    end
   end
 end

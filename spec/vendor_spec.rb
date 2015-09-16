@@ -6,6 +6,13 @@ describe DataStore::Vendor do
     expect(first).not_to be nil
   end
 
+  it 'should have many variants' do
+    expect(first.variants).to be_a_kind_of(Array)
+    if first.variants.length > 0
+      expect(first.variants.first).to be_a_kind_of(DataStore::Variant)
+    end
+  end
+
   it 'should have many products' do
     expect(first.products).to be_a_kind_of(Array)
     if first.products.length > 0
