@@ -76,6 +76,11 @@ vendor = DataStore::Vendor.first
 vendor.variants
 vendor.products
 ```
+### Rake Tasks
+To open up an irb session with this gem loaded in type:
+```ruby
+rake console
+```
 
 ## Development
 
