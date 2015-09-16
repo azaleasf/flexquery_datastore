@@ -25,17 +25,17 @@ This gem is for the DataStore product offered by [FlexQuery](flexquery.com). It 
 [DataMapper](http://datamapper.org/) was used as the ORM library. You can use [DataMapper query methods](http://datamapper.org/docs/find.html) on all objects created by this gem.
 
 ### Up and Running
-To get up and running you need to set an environment variable that your application can read with your postgres url:
+To get up and running you need to set an environment variable that your application can read with your postgres url.
 
 ```ruby
 DATASTORE_POSTGRES_URL=postgres://username:password@localhost/exampledb
 ```
-Optionally, you can set DataMapper to log all sql queries generated
+Optionally, you can set DataMapper to log all sql queries generated.
 ```ruby
 LOG_DATASTORE_QUERIES=true
 ```
 ### Available Classes and Associations
-The following are the classes and associations available in this gem. All have been namespaced with DataSore
+The following are the classes and associations available in this gem. All have been namespaced with DataStore::
 
 ```ruby
 # primary key rp8inventoryitems.desc1
