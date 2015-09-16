@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-The main use of this gem is to help gain access to data in a RetailPro 8 or RetailPro 9 system so you can build your own tools on top of RetailPro, or migrate all of your existing RetailPro data to a new inventory management system.
+The main use of this gem is to help gain access to data in a Retail Pro 8 or Retail Pro 9 system so you can build your own tools on top of Retail Pro, or migrate all of your existing Retail Pro data to a new inventory management system.
 
 This gem does not interface directly with RetailPro, instead it communicates with the DataStore product offered by [FlexQuery](flexquery.com). It provides an ORM mapping on top of the DataStore database.
 
