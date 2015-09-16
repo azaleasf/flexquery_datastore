@@ -20,7 +20,62 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+This gem is for the DataStore product offered by [FlexQuery](flexquery.com). It provides an ORM mapping on top of the DataStore database.
+
+[DataMapper](http://datamapper.org/) was used as the ORM library. You can use [DataMapper query methods](http://datamapper.org/docs/find.html) on all objects created by this gem.
+
+### Up and Running
+To get up and running you need to set an environment variable that your application can read with your postgres url:
+
+```ruby
+DATASTORE_POSTGRES_URL=postgres://username:password@localhost/exampledb
+```
+Optionally, you can set DataMapper to log all sql queries generated
+```ruby
+LOG_DATASTORE_QUERIES=true
+```
+### Available Classes and Associations
+The following are the classes and associations available in this gem. All have been namespaced with DataSore
+
+```ruby
+# primary key rp8inventoryitems.desc1
+DataStore::Product
+product = DataStore::Product.first
+product.variants
+product.vendor
+product.cateogry
+
+# primary key rp8inventoryitems.itemsid
+DataStore::Variant
+variant = DataStore::Variant.first
+variant.stocks
+variant.product
+variant.vendor
+variant.category
+
+# primary key rp8inventorydepartments.dcs
+DataStore::Category
+category = DataStore::Category.first
+category.variants
+category.products
+
+# composite primary key rp8inventoryqtys.itemsid, rp8inventoryqtys.storeno
+DataStore::Stock
+stock = DataStore::Stock.first
+stock.variant
+stock.store
+
+# primary key stores.storeno
+DataStore::Store
+store = DataStore::Store.first
+store.stocks
+
+# primary key rp8inventoryvendors.vendorcode
+DataStore::Vendor
+vendor = DataStore::Vendor.first
+vendor.variants
+vendor.products
+```
 
 ## Development
 
