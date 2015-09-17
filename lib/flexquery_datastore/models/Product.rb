@@ -4,7 +4,6 @@ module DataStore
     storage_names[:default] = "rp8inventoryitems"
     property :desc1, String, field: "desc1", key: true
 
-    has n, :variants, child_key: [:desc1]
     belongs_to :vendor, child_key: [:vendorcode]
     belongs_to :category, child_key: [:dcs]
 
@@ -18,5 +17,9 @@ module DataStore
     property :core,       String, field: "udf2"
     property :udf3,       String, field: "udf3"
     property :stylesid,   Integer, field: "stylesid"
+
+    def variants
+      DataStore::Variant.all(desc1: self.desc1)
+    end
   end
 end

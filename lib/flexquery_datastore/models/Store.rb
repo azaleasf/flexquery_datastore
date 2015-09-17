@@ -4,9 +4,11 @@ module DataStore
     storage_names[:default] = "stores"
     property :storeno, Integer, field: "storeno", key: true
 
-    has n, :stocks, child_key: [:storeno]
-
     property :storecode, Integer, field: "storecode"
     property :name,      String,  field: "storename"
+
+    def stocks
+      DataStore::Stock.all(storeno: self.storeno)
+    end
   end
 end

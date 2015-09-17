@@ -4,11 +4,9 @@ module DataStore
     storage_names[:default] = "rp8inventoryitems"
     property :itemsid, Integer, field: "itemsid", key: true
 
-    has n, :stocks, child_key: [:itemsid]
-    belongs_to :product, child_key: [:desc1]
     belongs_to :vendor, child_key: [:vendorcode]
-    belongs_to :category, child_key: [:dcs]
 
+    property :dcs,             String, field: "dcs"
     property :desc1,           String, field: "desc1"
     property :attr,            String, field: "attr"
     property :size,            String, field: "size"
@@ -38,5 +36,21 @@ module DataStore
     property :salediscpercent, Float, field: "salediscpercent"
     property :saledisc,        Integer, field: "saledisc"
     property :totaltax,        Float, field: "totaltax"
+
+    def price_levels
+      DataStore::PriceLevel.all(itemsid: self.itemsid)
+    end
+
+    def product
+      DataStore::Product.first(desc1: self.desc1)
+    end
+
+    def stocks
+      DataStore::Stock.all(itemsid: self.itemsid)
+    end
+
+    def category
+      DataStore::Category.first(dcs: self.dcs)
+    end
   end
 end
