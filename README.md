@@ -36,6 +36,11 @@ Optionally, you can set DataMapper to log all sql queries generated.
 ```ruby
 LOG_DATASTORE_QUERIES=true
 ```
+
+Before you can read from your DataStore database you need to run a setup method.
+```ruby
+DataStore::setup
+```
 ### Available Classes and Associations
 The following are the classes and associations available in this gem. All have been namespaced with DataStore::
 
