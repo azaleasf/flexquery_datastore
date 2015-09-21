@@ -36,6 +36,7 @@ module DataStore
     property :salediscpercent, Float, field: "salediscpercent"
     property :saledisc,        Integer, field: "saledisc"
     property :totaltax,        Float, field: "totaltax"
+    property :stylesid,        Integer, field: "stylesid"
 
     def price_levels
       DataStore::PriceLevel.all(itemsid: self.itemsid)
