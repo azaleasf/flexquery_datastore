@@ -4,7 +4,7 @@ module DataStore
     storage_names[:default] = "stores"
     property :storeno, Integer, field: "storeno", key: true
 
-    property :storecode, Integer, field: "storecode"
+    property :storecode, String, field: "storecode"
     property :name,      String,  field: "storename"
 
     def stocks
